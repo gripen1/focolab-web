@@ -1,0 +1,51 @@
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Método no permitido' });
+  }
+  const { name, company, email, phone, need, budget, time } = req.body;
+  if (!name || !email) {
+    return res.status(400).json({ error: 'Nombre y correo son requeridos' });
+  }
+  try {
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'FocoLab <contacto@focolab.cl>',
+        to: ['focolabchile@gmail.com'],
+        subject: `🔥 Nueva solicitud de proyecto — ${name}`,
+        html: `
+          <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#0a0a0a;color:#fff;border-radius:12px;overflow:hidden;">
+            <div style="background:#c8f135;padding:24px 32px;">
+              <h1 style="margin:0;color:#0a0a0a;font-size:22px;">Nueva solicitud — FocoLab</h1>
+            </div>
+            <div style="padding:32px;">
+              <table style="width:100%;border-collapse:collapse;">
+                <tr><td style="padding:10px 0;color:#888;font-size:14px;width:140px;">Nombre</td><td style="padding:10px 0;font-size:14px;font-weight:600;">${name}</td></tr>
+                ${company ? `<tr><td style="padding:10px 0;color:#888;font-size:14px;">Empresa</td><td style="padding:10px 0;font-size:14px;">${company}</td></tr>` : ''}
+                <tr><td style="padding:10px 0;color:#888;font-size:14px;">Email</td><td style="padding:10px 0;font-size:14px;"><a href="mailto:${email}" style="color:#c8f135;">${email}</a></td></tr>
+                ${phone ? `<tr><td style="padding:10px 0;color:#888;font-size:14px;">Teléfono</td><td style="padding:10px 0;font-size:14px;">${phone}</td></tr>` : ''}
+                <tr><td colspan="2" style="border-top:1px solid #222;padding-top:16px;"></td></tr>
+                <tr><td style="padding:10px 0;color:#888;font-size:14px;">Servicio</td><td style="padding:10px 0;font-size:14px;">${need || '—'}</td></tr>
+                <tr><td style="padding:10px 0;color:#888;font-size:14px;">Presupuesto</td><td style="padding:10px 0;font-size:14px;">${budget || '—'}</td></tr>
+                <tr><td style="padding:10px 0;color:#888;font-size:14px;">Inicio</td><td style="padding:10px 0;font-size:14px;">${time || '—'}</td></tr>
+              </table>
+            </div>
+          </div>
+        `,
+      }),
+    });
+    if (!response.ok) {
+      const error = await response.json();
+      console.error('Resend error:', error);
+      return res.status(500).json({ error: 'Error al enviar el correo' });
+    }
+    return res.status(200).json({ success: true });
+  } catch (err) {
+    console.error('Error:', err);
+    return res.status(500).json({ error: 'Error interno del servidor' });
+  }
+}
