@@ -152,7 +152,45 @@ h1 em{color:var(--accent);font-style:normal;}
 .btn-price:hover{opacity:0.85;transform:translateY(-1px);}
 .btn-price.outline{border:1px solid var(--border);color:var(--text);}
 .btn-price.solid{background:var(--accent);color:#0a0a0a;}
-/* INTEGRATIONS */
+/* PORTFOLIO */
+.portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem;}
+.port-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color .3s,transform .3s;}
+.port-card:hover{border-color:var(--accent);transform:translateY(-4px);}
+.port-card.port-featured{border-color:rgba(200,241,53,0.3);grid-column:1/-1;}
+.port-featured .port-img{height:280px;}
+.port-badge{background:rgba(200,241,53,0.12);color:var(--accent);font-size:0.75rem;font-weight:600;padding:0.4rem 1rem;border-bottom:1px solid rgba(200,241,53,0.2);letter-spacing:0.05em;}
+.port-img{height:200px;position:relative;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center;}
+.port-img-tcr{background:linear-gradient(135deg,#0a0a0a 0%,#1a0a1a 50%,#0a0a0a 100%);}
+.port-img-flores{background:linear-gradient(135deg,#1a1a1a 0%,#0f1a12 50%,#1a1a1a 100%);}
+.port-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;}
+.port-card:hover .port-overlay{opacity:1;}
+.port-link{background:var(--accent);color:#0a0a0a;padding:0.7rem 1.8rem;border-radius:99px;font-size:0.9rem;font-weight:700;text-decoration:none;}
+.port-mockup{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;width:75%;padding:0;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);}
+.mockup-bar{background:#2a2a2a;padding:8px 12px;display:flex;gap:6px;align-items:center;}
+.mockup-bar span{width:8px;height:8px;border-radius:50%;background:#444;}
+.mockup-bar span:nth-child(1){background:#ff5f57;}
+.mockup-bar span:nth-child(2){background:#febc2e;}
+.mockup-bar span:nth-child(3){background:#28c840;}
+.mockup-url{background:#222;padding:5px 12px;font-size:0.65rem;color:#666;font-family:monospace;}
+.mockup-content{padding:20px;text-align:center;}
+.tcr-content{background:#0a0a0a;}
+.tcr-logo{font-size:1.1rem;font-weight:900;letter-spacing:0.1em;color:#fff;margin-bottom:4px;}
+.tcr-sub{font-size:0.7rem;color:#aaa;margin-bottom:12px;}
+.tcr-dots{display:flex;gap:8px;justify-content:center;}
+.tcr-dots span{width:18px;height:18px;border-radius:50%;}
+.flores-content{background:#0f1a12;}
+.flores-icon{font-size:1.8rem;margin-bottom:6px;}
+.flores-name{font-size:0.85rem;font-weight:600;color:#b9c5a1;margin-bottom:3px;}
+.flores-sub{font-size:0.65rem;color:#666;}
+.port-info{padding:1.5rem;}
+.port-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;}
+.port-tag{font-size:0.7rem;background:rgba(200,241,53,0.08);color:var(--accent);padding:0.25rem 0.7rem;border-radius:99px;border:1px solid rgba(200,241,53,0.15);}
+.port-title{font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;}
+.port-desc{color:var(--muted);font-size:0.88rem;line-height:1.6;margin-bottom:1rem;}
+.port-cta{color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:opacity .2s;}
+.port-cta:hover{opacity:0.75;}
+@media(max-width:768px){.portfolio-grid{grid-template-columns:1fr;}.port-card.port-featured{grid-column:1;}}
+/* END PORTFOLIO */
 .integrations-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
 .int-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.2rem;text-align:center;transition:border-color .3s,transform .3s;}
 .int-card:hover{border-color:var(--accent);transform:translateY(-3px);}
@@ -413,7 +451,7 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
     <div class="reveal"><div class="section-tag">Planes</div><h2 class="section-title">Precios claros,<br/>sin sorpresas</h2><p class="section-sub">Elige el plan que mejor se adapta a tu etapa. Todos incluyen un responsable directo a cargo de tu proyecto.</p></div>
     <div class="pricing-grid reveal">
       <div class="price-card">
-        <div class="price-name">Básico</div><div class="price-amount"><span class="price-from">Desde </span>$100.000</div><div class="price-period">CLP · pago único</div>
+        <div class="price-name">Básico</div>        <div class="price-amount"><span class="price-from">Desde </span>$150.000</div><div class="price-period">CLP · pago único</div>
         <ul class="price-features">
           <li>Sitio web informativo (one page)</li><li>Diseño a medida</li><li>Formulario de contacto</li><li>Optimización móvil y velocidad</li><li class="no">Hosting no incluido</li><li class="no">Blog</li>
         </ul>
@@ -448,7 +486,81 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
   </div>
 </section>
 
-<!-- TESTIMONIALS → negro -->
+<!-- PORTFOLIO → negro -->
+<section id="portfolio" style="background:var(--bg);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-tag" style="text-align:center;">Portafolio</div>
+      <h2 class="section-title">Proyectos que<br/>hablan por sí solos</h2>
+      <p class="section-sub" style="margin:0 auto 3rem;text-align:center;">Cada sitio es el resultado de escuchar al cliente, entender su negocio y ejecutar con precisión.</p>
+    </div>
+    <div class="portfolio-grid reveal">
+
+      <!-- The Color Run — DESTACADO -->
+      <div class="port-card port-featured">
+        <div class="port-badge">⭐ Proyecto destacado</div>
+        <div class="port-img port-img-tcr">
+          <div class="port-overlay">
+            <a href="https://www.colorrun.cl" target="_blank" class="port-link">Ver sitio →</a>
+          </div>
+          <div class="port-mockup">
+            <div class="mockup-bar"><span></span><span></span><span></span></div>
+            <div class="mockup-url">colorrun.cl</div>
+            <div class="mockup-content tcr-content">
+              <div class="tcr-logo">THE COLOR RUN</div>
+              <div class="tcr-sub">make magic ✨</div>
+              <div class="tcr-dots">
+                <span style="background:#FF69B4"></span>
+                <span style="background:#FFD700"></span>
+                <span style="background:#00BFFF"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tags"><span class="port-tag">E-commerce</span><span class="port-tag">Eventos</span><span class="port-tag">Marketing</span></div>
+          <h3 class="port-title">The Color Run Chile</h3>
+          <p class="port-desc">Plataforma completa para el evento de running más colorido del mundo en Chile. Inscripciones, pasarela de pago y experiencia visual de alto impacto.</p>
+          <a href="https://www.colorrun.cl" target="_blank" class="port-cta">Visitar www.colorrun.cl →</a>
+        </div>
+      </div>
+
+      <!-- Flores Araya Ferrer -->
+      <div class="port-card">
+        <div class="port-img port-img-flores">
+          <div class="port-overlay">
+            <a href="https://www.floresarayaferrer.cl" target="_blank" class="port-link">Ver sitio →</a>
+          </div>
+          <div class="port-mockup">
+            <div class="mockup-bar"><span></span><span></span><span></span></div>
+            <div class="mockup-url">floresarayaferrer.cl</div>
+            <div class="mockup-content flores-content">
+              <div class="flores-icon">🌸</div>
+              <div class="flores-name">Flores Araya Ferrer</div>
+              <div class="flores-sub">Arreglos florales · Talagante</div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tags"><span class="port-tag">Landing page</span><span class="port-tag">Floral</span></div>
+          <h3 class="port-title">Flores Araya Ferrer</h3>
+          <p class="port-desc">Sitio elegante para emprendimiento de arreglos florales y matrimonios en Talagante. Diseño minimalista con formulario de contacto y WhatsApp integrado.</p>
+          <a href="https://www.floresarayaferrer.cl" target="_blank" class="port-cta">Visitar www.floresarayaferrer.cl →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA portafolio -->
+    <div class="reveal" style="text-align:center;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);">
+      <h3 style="font-size:1.8rem;font-weight:700;letter-spacing:-0.03em;margin-bottom:0.8rem;">¿Y tú qué esperas?</h3>
+      <p style="color:var(--muted);font-size:1rem;margin-bottom:2rem;">Tu proyecto puede ser el próximo caso de éxito de FocoLab.</p>
+      <a href="#form" class="btn-primary" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'});return false;">Quiero mi proyecto →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS → gris -->
 <section id="testimonials" style="background:var(--bg);">
   <div class="container">
     <div class="reveal"><div class="section-tag">Testimonios</div><h2 class="section-title">Lo que dicen<br/>nuestros clientes</h2></div>
