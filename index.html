@@ -189,6 +189,22 @@ h1 em{color:var(--accent);font-style:normal;}
 .port-desc{color:var(--muted);font-size:0.88rem;line-height:1.6;margin-bottom:1rem;}
 .port-cta{color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:opacity .2s;}
 .port-cta:hover{opacity:0.75;}
+.port-img-dashboard{background:linear-gradient(135deg,#0a0a0a 0%,#0a0f1a 50%,#0a0a0a 100%);}
+.dashboard-content{background:#0a0f1a;padding:12px;}
+.dash-preview{display:flex;justify-content:space-around;margin-bottom:10px;}
+.dash-stat{text-align:center;}
+.dash-num{font-size:1.1rem;font-weight:800;line-height:1;}
+.dash-label{font-size:0.55rem;color:#666;margin-top:2px;}
+.dash-bar-wrap{display:flex;flex-direction:column;gap:4px;}
+.dash-bar{height:6px;border-radius:99px;opacity:0.7;}
+.bertonati-content{background:#0d1117;padding:12px;}
+.kanban-preview{display:flex;gap:6px;}
+.kb-col{flex:1;display:flex;flex-direction:column;gap:4px;}
+.kb-head{font-size:0.55rem;font-weight:700;text-align:center;margin-bottom:3px;letter-spacing:0.05em;}
+.kb-card{height:18px;border-radius:3px;background:#1e1e2e;}
+.kb-active{background:rgba(200,241,53,0.2);border:1px solid rgba(200,241,53,0.3);}
+.kb-done{background:rgba(40,200,64,0.2);border:1px solid rgba(40,200,64,0.3);}
+.kb-lost{background:rgba(255,95,87,0.15);border:1px solid rgba(255,95,87,0.2);}
 @media(max-width:768px){.portfolio-grid{grid-template-columns:1fr;}.port-card.port-featured{grid-column:1;}}
 /* END PORTFOLIO */
 .integrations-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
@@ -546,6 +562,63 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
           <h3 class="port-title">Flores Araya Ferrer</h3>
           <p class="port-desc">Sitio elegante para emprendimiento de arreglos florales y matrimonios en Talagante. Diseño minimalista con formulario de contacto y WhatsApp integrado.</p>
           <a href="https://www.floresarayaferrer.cl" target="_blank" class="port-cta">Visitar www.floresarayaferrer.cl →</a>
+        </div>
+      </div>
+
+      <!-- Bertonati -->
+      <div class="port-card">
+        <div class="port-img port-img-bertonati">
+          <div class="port-overlay" style="cursor:default;">
+            <span style="background:rgba(200,241,53,0.15);color:var(--accent);padding:0.6rem 1.4rem;border-radius:99px;font-size:0.85rem;font-weight:600;border:1px solid rgba(200,241,53,0.3);">🔒 Herramienta privada</span>
+          </div>
+          <div class="port-mockup">
+            <div class="mockup-bar"><span></span><span></span><span></span></div>
+            <div class="mockup-url">Sistema interno · Confidencial</div>
+            <div class="mockup-content bertonati-content">
+              <div class="kanban-preview">
+                <div class="kb-col"><div class="kb-head" style="color:#c8f135">Adjudicado</div><div class="kb-card kb-active"></div><div class="kb-card kb-active"></div></div>
+                <div class="kb-col"><div class="kb-head" style="color:#28c840">Entregado</div><div class="kb-card kb-done"></div></div>
+                <div class="kb-col"><div class="kb-head" style="color:#ff5f57">Perdido</div><div class="kb-card kb-lost"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tags"><span class="port-tag">App interna</span><span class="port-tag">Licitaciones</span><span class="port-tag">Kanban</span><span class="port-tag">Supabase</span></div>
+          <h3 class="port-title">Calculadora de Licitaciones — Empresa Confidencial</h3>
+          <p class="port-desc">Herramienta interna de gestión para equipos que participan en licitaciones públicas. Calcula automáticamente la EFME (Fecha Estimada de Entrega) considerando hitos administrativos, días hábiles y feriados chilenos. Incluye tablero Kanban, alertas por proximidad de entrega, sincronización en la nube y acceso protegido por PIN.</p>
+          <span style="font-size:0.82rem;color:var(--muted);font-style:italic;">Acceso restringido · Uso interno</span>
+        </div>
+      </div>
+
+      <!-- Dashboard Comercial -->
+      <div class="port-card">
+        <div class="port-img port-img-dashboard">
+          <div class="port-overlay" style="cursor:default;">
+            <span style="background:rgba(200,241,53,0.15);color:var(--accent);padding:0.6rem 1.4rem;border-radius:99px;font-size:0.85rem;font-weight:600;border:1px solid rgba(200,241,53,0.3);">🔒 Herramienta privada</span>
+          </div>
+          <div class="port-mockup">
+            <div class="mockup-bar"><span></span><span></span><span></span></div>
+            <div class="mockup-url">Dashboard interno · Confidencial</div>
+            <div class="mockup-content dashboard-content">
+              <div class="dash-preview">
+                <div class="dash-stat"><div class="dash-num" style="color:#c8f135">24</div><div class="dash-label">Activas</div></div>
+                <div class="dash-stat"><div class="dash-num" style="color:#28c840">68%</div><div class="dash-label">Conversión</div></div>
+                <div class="dash-stat"><div class="dash-num" style="color:#82aaff">7</div><div class="dash-label">Secciones</div></div>
+              </div>
+              <div class="dash-bar-wrap">
+                <div class="dash-bar" style="width:80%;background:#c8f135"></div>
+                <div class="dash-bar" style="width:55%;background:#82aaff"></div>
+                <div class="dash-bar" style="width:30%;background:#ff5f57"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tags"><span class="port-tag">Dashboard</span><span class="port-tag">Comercial</span><span class="port-tag">Tiempo real</span><span class="port-tag">Gerencia</span></div>
+          <h3 class="port-title">Dashboard Comercial — Empresa Confidencial</h3>
+          <p class="port-desc">Herramienta de control comercial en tiempo real con 7 secciones navegables: resumen ejecutivo, carga del equipo con alertas automáticas, pipeline por etapas, tasa de conversión, productos, coordinadoras y consultas al mercado. Diseñada para que supervisores tomen decisiones del día a día y presenten reportes semanales a gerencia sin entrar al ERP.</p>
+          <span style="font-size:0.82rem;color:var(--muted);font-style:italic;">Acceso restringido · Uso interno</span>
         </div>
       </div>
 
