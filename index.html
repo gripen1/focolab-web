@@ -44,6 +44,7 @@ h1 em{color:var(--accent);font-style:normal;}
 .stat-box.lit::before{transform:scaleX(1);}
 .stat-num{font-size:1.8rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;line-height:1;}
 .stat-label{color:var(--muted);font-size:0.75rem;margin-top:0.4rem;}
+.hero-visual-wrap{position:relative;padding:1rem 2rem 2rem 1rem;}
 .hero-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;}
 .hero-card::before{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);}
 .card-header{display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;}
@@ -51,17 +52,17 @@ h1 em{color:var(--accent);font-style:normal;}
 .dot.r{background:#ff5f57;}.dot.y{background:#febc2e;}.dot.g{background:#28c840;}
 .code-line{font-family:monospace;font-size:0.8rem;color:var(--muted);line-height:2;}
 .code-line .kw{color:#c792ea;}.code-line .str{color:var(--accent);}.code-line .fn{color:#82aaff;}
-.hero-visual-wrap{position:relative;padding:1rem 2rem 2rem 1rem;}
 .floating-badge{position:absolute;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:0.65rem 1rem;font-size:0.78rem;animation:float 3s ease-in-out infinite;z-index:2;display:flex;align-items:center;gap:0.5rem;}
-.floating-badge.one{bottom:0px;right:0px;animation-delay:0s;}
+.floating-badge.one{bottom:0;right:0;}
 .floating-badge.two{top:20px;right:-10px;animation-delay:1.5s;}
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+/* COMMONS */
 .section-tag{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:1rem;}
 .section-title{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:1rem;}
 .section-sub{color:var(--muted);font-size:1rem;line-height:1.7;max-width:500px;margin-bottom:3.5rem;}
 /* SERVICES */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.service-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:border-color .3s,transform .3s;position:relative;}
+.service-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:border-color .3s,transform .3s;}
 .service-card:hover{border-color:var(--accent);transform:translateY(-4px);}
 .service-icon{width:48px;height:48px;background:rgba(200,241,53,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.3rem;font-size:1.4rem;}
 .service-card h3{font-size:1.1rem;font-weight:600;margin-bottom:0.7rem;}
@@ -152,6 +153,13 @@ h1 em{color:var(--accent);font-style:normal;}
 .btn-price:hover{opacity:0.85;transform:translateY(-1px);}
 .btn-price.outline{border:1px solid var(--border);color:var(--text);}
 .btn-price.solid{background:var(--accent);color:#0a0a0a;}
+/* INTEGRATIONS */
+.integrations-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+.int-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.2rem;text-align:center;transition:border-color .3s,transform .3s;}
+.int-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+.int-logo{width:48px;height:48px;border-radius:12px;margin:0 auto 0.8rem;display:flex;align-items:center;justify-content:center;}
+.int-name{font-size:0.88rem;font-weight:600;margin-bottom:0.3rem;}
+.int-desc{font-size:0.75rem;color:var(--muted);line-height:1.4;}
 /* PORTFOLIO */
 .portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem;}
 .port-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color .3s,transform .3s;}
@@ -162,12 +170,14 @@ h1 em{color:var(--accent);font-style:normal;}
 .port-img{height:200px;position:relative;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center;}
 .port-img-tcr{background:linear-gradient(135deg,#0a0a0a 0%,#1a0a1a 50%,#0a0a0a 100%);}
 .port-img-flores{background:linear-gradient(135deg,#1a1a1a 0%,#0f1a12 50%,#1a1a1a 100%);}
+.port-img-bertonati{background:linear-gradient(135deg,#0a0a10 0%,#0d1117 50%,#0a0a10 100%);}
+.port-img-dashboard{background:linear-gradient(135deg,#0a0a0a 0%,#0a0f1a 50%,#0a0a0a 100%);}
 .port-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;}
 .port-card:hover .port-overlay{opacity:1;}
 .port-link{background:var(--accent);color:#0a0a0a;padding:0.7rem 1.8rem;border-radius:99px;font-size:0.9rem;font-weight:700;text-decoration:none;}
-.port-mockup{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;width:75%;padding:0;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);}
+.port-mockup{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;width:75%;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);}
 .mockup-bar{background:#2a2a2a;padding:8px 12px;display:flex;gap:6px;align-items:center;}
-.mockup-bar span{width:8px;height:8px;border-radius:50%;background:#444;}
+.mockup-bar span{width:8px;height:8px;border-radius:50%;}
 .mockup-bar span:nth-child(1){background:#ff5f57;}
 .mockup-bar span:nth-child(2){background:#febc2e;}
 .mockup-bar span:nth-child(3){background:#28c840;}
@@ -182,21 +192,6 @@ h1 em{color:var(--accent);font-style:normal;}
 .flores-icon{font-size:1.8rem;margin-bottom:6px;}
 .flores-name{font-size:0.85rem;font-weight:600;color:#b9c5a1;margin-bottom:3px;}
 .flores-sub{font-size:0.65rem;color:#666;}
-.port-info{padding:1.5rem;}
-.port-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;}
-.port-tag{font-size:0.7rem;background:rgba(200,241,53,0.08);color:var(--accent);padding:0.25rem 0.7rem;border-radius:99px;border:1px solid rgba(200,241,53,0.15);}
-.port-title{font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;}
-.port-desc{color:var(--muted);font-size:0.88rem;line-height:1.6;margin-bottom:1rem;}
-.port-cta{color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:opacity .2s;}
-.port-cta:hover{opacity:0.75;}
-.port-img-dashboard{background:linear-gradient(135deg,#0a0a0a 0%,#0a0f1a 50%,#0a0a0a 100%);}
-.dashboard-content{background:#0a0f1a;padding:12px;}
-.dash-preview{display:flex;justify-content:space-around;margin-bottom:10px;}
-.dash-stat{text-align:center;}
-.dash-num{font-size:1.1rem;font-weight:800;line-height:1;}
-.dash-label{font-size:0.55rem;color:#666;margin-top:2px;}
-.dash-bar-wrap{display:flex;flex-direction:column;gap:4px;}
-.dash-bar{height:6px;border-radius:99px;opacity:0.7;}
 .bertonati-content{background:#0d1117;padding:12px;}
 .kanban-preview{display:flex;gap:6px;}
 .kb-col{flex:1;display:flex;flex-direction:column;gap:4px;}
@@ -205,23 +200,20 @@ h1 em{color:var(--accent);font-style:normal;}
 .kb-active{background:rgba(200,241,53,0.2);border:1px solid rgba(200,241,53,0.3);}
 .kb-done{background:rgba(40,200,64,0.2);border:1px solid rgba(40,200,64,0.3);}
 .kb-lost{background:rgba(255,95,87,0.15);border:1px solid rgba(255,95,87,0.2);}
-@media(max-width:768px){.portfolio-grid{grid-template-columns:1fr;}.port-card.port-featured{grid-column:1;}}
-/* END PORTFOLIO */
-.integrations-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
-.int-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.2rem;text-align:center;transition:border-color .3s,transform .3s;}
-.int-card:hover{border-color:var(--accent);transform:translateY(-3px);}
-.int-logo{width:48px;height:48px;border-radius:12px;margin:0 auto 0.8rem;display:flex;align-items:center;justify-content:center;}
-.int-name{font-size:0.88rem;font-weight:600;margin-bottom:0.3rem;}
-.int-desc{font-size:0.75rem;color:var(--muted);line-height:1.4;}
-/* TESTIMONIALS */
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
-.test-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.8rem;}
-.stars{color:var(--accent);font-size:0.9rem;margin-bottom:1rem;letter-spacing:2px;}
-.test-text{color:#ccc;font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem;}
-.test-author{display:flex;align-items:center;gap:0.8rem;}
-.avatar{width:38px;height:38px;border-radius:50%;background:rgba(200,241,53,0.15);border:1px solid rgba(200,241,53,0.3);display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:600;color:var(--accent);}
-.author-name{font-size:0.9rem;font-weight:600;}
-.author-role{font-size:0.75rem;color:var(--muted);}
+.dashboard-content{background:#0a0f1a;padding:12px;}
+.dash-preview{display:flex;justify-content:space-around;margin-bottom:10px;}
+.dash-stat{text-align:center;}
+.dash-num{font-size:1.1rem;font-weight:800;line-height:1;}
+.dash-label{font-size:0.55rem;color:#666;margin-top:2px;}
+.dash-bar-wrap{display:flex;flex-direction:column;gap:4px;}
+.dash-bar{height:6px;border-radius:99px;opacity:0.7;}
+.port-info{padding:1.5rem;}
+.port-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;}
+.port-tag{font-size:0.7rem;background:rgba(200,241,53,0.08);color:var(--accent);padding:0.25rem 0.7rem;border-radius:99px;border:1px solid rgba(200,241,53,0.15);}
+.port-title{font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;}
+.port-desc{color:var(--muted);font-size:0.88rem;line-height:1.6;margin-bottom:1rem;}
+.port-cta{color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;transition:opacity .2s;}
+.port-cta:hover{opacity:0.75;}
 /* CLIENTS */
 #clients{padding:4rem 0;}
 .clients-label{text-align:center;color:var(--muted);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:2.5rem;}
@@ -291,48 +283,40 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.visible{opacity:1;transform:none;}
 @media(max-width:1024px){
-  .hero-grid{grid-template-columns:1fr;}
-  .hero-visual-wrap{display:none;}
-  .services-grid{grid-template-columns:repeat(2,1fr);}
-  .pricing-grid{grid-template-columns:repeat(2,1fr);}
-  .test-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-grid{grid-template-columns:1fr;}.hero-visual-wrap{display:none;}
+  .services-grid,.pricing-grid{grid-template-columns:repeat(2,1fr);}
   .live-metrics{grid-template-columns:repeat(2,1fr);}
   .integrations-grid{grid-template-columns:repeat(3,1fr);}
-  .process-steps{grid-template-columns:repeat(2,1fr);}
-  .process-steps::before{display:none;}
+  .process-steps{grid-template-columns:repeat(2,1fr);}.process-steps::before{display:none;}
   .why-grid{grid-template-columns:1fr;}
-  .tree-branches{flex-wrap:wrap;gap:1rem;}
-  .tree-branch{max-width:160px;}
+  .tree-branches{flex-wrap:wrap;}.tree-branch{max-width:160px;}
 }
 @media(max-width:768px){
-  nav{padding:1rem 1.5rem;}
-  section{padding:4rem 1.5rem;}
+  nav{padding:1rem 1.5rem;}section{padding:4rem 1.5rem;}
+  h1{font-size:2.2rem;}
   .hero-stats{flex-direction:column;gap:0.8rem;}
-  .stat-box{width:100%;}
-  .services-grid,.pricing-grid,.test-grid,.blog-grid{grid-template-columns:1fr;}
+  .services-grid,.pricing-grid,.blog-grid{grid-template-columns:1fr;}
   .process-steps{grid-template-columns:1fr;}
   .live-metrics{grid-template-columns:1fr 1fr;}
   .integrations-grid{grid-template-columns:repeat(2,1fr);}
+  .portfolio-grid{grid-template-columns:1fr;}.port-card.port-featured{grid-column:1;}
   .options-grid{grid-template-columns:1fr;}
-  .tree-branches{flex-direction:column;align-items:center;}
-  .tree-branch-wrap::before{display:none;}
+  .tree-branches{flex-direction:column;align-items:center;}.tree-branch-wrap::before{display:none;}
   .tree-branch{max-width:100%;width:100%;}
-  .why-grid{grid-template-columns:1fr;}
-  footer{flex-direction:column;text-align:center;}
-  .footer-links{justify-content:center;}
-  h1{font-size:2.2rem;}
+  footer{flex-direction:column;text-align:center;}.footer-links{justify-content:center;}
 }
 @media(max-width:480px){
-  nav{padding:0.9rem 1rem;}
-  .logo{font-size:1.1rem;}
+  nav{padding:0.9rem 1rem;}.logo{font-size:1.1rem;}
   .live-metrics{grid-template-columns:1fr;}
   .integrations-grid{grid-template-columns:1fr 1fr;}
-  .trust-grid{grid-template-columns:1fr 1fr;}
-  .hero-stats{gap:0.6rem;}
 }
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMQG5HXS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <nav>
   <div class="logo">Foco<span>Lab</span></div>
   <a class="nav-cta" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Comenzar proyecto</a>
@@ -467,7 +451,7 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
     <div class="reveal"><div class="section-tag">Planes</div><h2 class="section-title">Precios claros,<br/>sin sorpresas</h2><p class="section-sub">Elige el plan que mejor se adapta a tu etapa. Todos incluyen un responsable directo a cargo de tu proyecto.</p></div>
     <div class="pricing-grid reveal">
       <div class="price-card">
-        <div class="price-name">Básico</div>        <div class="price-amount"><span class="price-from">Desde </span>$150.000</div><div class="price-period">CLP · pago único</div>
+        <div class="price-name">Básico</div><div class="price-amount"><span class="price-from">Desde </span>$150.000</div><div class="price-period">CLP · pago único</div>
         <ul class="price-features">
           <li>Sitio web informativo (one page)</li><li>Diseño a medida</li><li>Formulario de contacto</li><li>Optimización móvil y velocidad</li><li class="no">Hosting no incluido</li><li class="no">Blog</li>
         </ul>
@@ -505,31 +489,19 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
 <!-- PORTFOLIO → negro -->
 <section id="portfolio" style="background:var(--bg);">
   <div class="container">
-    <div class="reveal" style="text-align:center;">
-      <div class="section-tag" style="text-align:center;">Portafolio</div>
-      <h2 class="section-title">Proyectos que<br/>hablan por sí solos</h2>
-      <p class="section-sub" style="margin:0 auto 3rem;text-align:center;">Cada sitio es el resultado de escuchar al cliente, entender su negocio y ejecutar con precisión.</p>
-    </div>
+    <div class="reveal" style="text-align:center;"><div class="section-tag" style="text-align:center;">Portafolio</div><h2 class="section-title">Proyectos que<br/>hablan por sí solos</h2><p class="section-sub" style="margin:0 auto 3rem;text-align:center;">Cada sitio es el resultado de escuchar al cliente, entender su negocio y ejecutar con precisión.</p></div>
     <div class="portfolio-grid reveal">
-
-      <!-- The Color Run — DESTACADO -->
       <div class="port-card port-featured">
         <div class="port-badge">⭐ Proyecto destacado</div>
         <div class="port-img port-img-tcr">
-          <div class="port-overlay">
-            <a href="https://www.colorrun.cl" target="_blank" class="port-link">Ver sitio →</a>
-          </div>
+          <div class="port-overlay"><a href="https://www.colorrun.cl" target="_blank" class="port-link">Ver sitio →</a></div>
           <div class="port-mockup">
             <div class="mockup-bar"><span></span><span></span><span></span></div>
             <div class="mockup-url">colorrun.cl</div>
             <div class="mockup-content tcr-content">
               <div class="tcr-logo">THE COLOR RUN</div>
               <div class="tcr-sub">make magic ✨</div>
-              <div class="tcr-dots">
-                <span style="background:#FF69B4"></span>
-                <span style="background:#FFD700"></span>
-                <span style="background:#00BFFF"></span>
-              </div>
+              <div class="tcr-dots"><span style="background:#FF69B4"></span><span style="background:#FFD700"></span><span style="background:#00BFFF"></span></div>
             </div>
           </div>
         </div>
@@ -540,13 +512,9 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
           <a href="https://www.colorrun.cl" target="_blank" class="port-cta">Visitar www.colorrun.cl →</a>
         </div>
       </div>
-
-      <!-- Flores Araya Ferrer -->
       <div class="port-card">
         <div class="port-img port-img-flores">
-          <div class="port-overlay">
-            <a href="https://www.floresarayaferrer.cl" target="_blank" class="port-link">Ver sitio →</a>
-          </div>
+          <div class="port-overlay"><a href="https://www.floresarayaferrer.cl" target="_blank" class="port-link">Ver sitio →</a></div>
           <div class="port-mockup">
             <div class="mockup-bar"><span></span><span></span><span></span></div>
             <div class="mockup-url">floresarayaferrer.cl</div>
@@ -564,13 +532,9 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
           <a href="https://www.floresarayaferrer.cl" target="_blank" class="port-cta">Visitar www.floresarayaferrer.cl →</a>
         </div>
       </div>
-
-      <!-- Bertonati -->
       <div class="port-card">
         <div class="port-img port-img-bertonati">
-          <div class="port-overlay" style="cursor:default;">
-            <span style="background:rgba(200,241,53,0.15);color:var(--accent);padding:0.6rem 1.4rem;border-radius:99px;font-size:0.85rem;font-weight:600;border:1px solid rgba(200,241,53,0.3);">🔒 Herramienta privada</span>
-          </div>
+          <div class="port-overlay" style="cursor:default;"><span style="background:rgba(200,241,53,0.15);color:var(--accent);padding:0.6rem 1.4rem;border-radius:99px;font-size:0.85rem;font-weight:600;border:1px solid rgba(200,241,53,0.3);">🔒 Herramienta privada</span></div>
           <div class="port-mockup">
             <div class="mockup-bar"><span></span><span></span><span></span></div>
             <div class="mockup-url">Sistema interno · Confidencial</div>
@@ -586,17 +550,13 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
         <div class="port-info">
           <div class="port-tags"><span class="port-tag">App interna</span><span class="port-tag">Licitaciones</span><span class="port-tag">Kanban</span><span class="port-tag">Supabase</span></div>
           <h3 class="port-title">Calculadora de Licitaciones — Empresa Confidencial</h3>
-          <p class="port-desc">Herramienta interna de gestión para equipos que participan en licitaciones públicas. Calcula automáticamente la EFME (Fecha Estimada de Entrega) considerando hitos administrativos, días hábiles y feriados chilenos. Incluye tablero Kanban, alertas por proximidad de entrega, sincronización en la nube y acceso protegido por PIN.</p>
+          <p class="port-desc">Herramienta interna de gestión para equipos que participan en licitaciones públicas. Calcula automáticamente la EFME considerando hitos administrativos, días hábiles y feriados chilenos. Incluye tablero Kanban, alertas por proximidad de entrega y acceso protegido por PIN.</p>
           <span style="font-size:0.82rem;color:var(--muted);font-style:italic;">Acceso restringido · Uso interno</span>
         </div>
       </div>
-
-      <!-- Dashboard Comercial -->
       <div class="port-card">
         <div class="port-img port-img-dashboard">
-          <div class="port-overlay" style="cursor:default;">
-            <span style="background:rgba(200,241,53,0.15);color:var(--accent);padding:0.6rem 1.4rem;border-radius:99px;font-size:0.85rem;font-weight:600;border:1px solid rgba(200,241,53,0.3);">🔒 Herramienta privada</span>
-          </div>
+          <div class="port-overlay" style="cursor:default;"><span style="background:rgba(200,241,53,0.15);color:var(--accent);padding:0.6rem 1.4rem;border-radius:99px;font-size:0.85rem;font-weight:600;border:1px solid rgba(200,241,53,0.3);">🔒 Herramienta privada</span></div>
           <div class="port-mockup">
             <div class="mockup-bar"><span></span><span></span><span></span></div>
             <div class="mockup-url">Dashboard interno · Confidencial</div>
@@ -617,30 +577,15 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
         <div class="port-info">
           <div class="port-tags"><span class="port-tag">Dashboard</span><span class="port-tag">Comercial</span><span class="port-tag">Tiempo real</span><span class="port-tag">Gerencia</span></div>
           <h3 class="port-title">Dashboard Comercial — Empresa Confidencial</h3>
-          <p class="port-desc">Herramienta de control comercial en tiempo real con 7 secciones navegables: resumen ejecutivo, carga del equipo con alertas automáticas, pipeline por etapas, tasa de conversión, productos, coordinadoras y consultas al mercado. Diseñada para que supervisores tomen decisiones del día a día y presenten reportes semanales a gerencia sin entrar al ERP.</p>
+          <p class="port-desc">Herramienta de control comercial en tiempo real con 7 secciones navegables: resumen ejecutivo, carga del equipo con alertas automáticas, pipeline por etapas, tasa de conversión, productos, coordinadoras y consultas al mercado. Diseñada para supervisores y gerencia.</p>
           <span style="font-size:0.82rem;color:var(--muted);font-style:italic;">Acceso restringido · Uso interno</span>
         </div>
       </div>
-
     </div>
-
-    <!-- CTA portafolio -->
     <div class="reveal" style="text-align:center;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);">
       <h3 style="font-size:1.8rem;font-weight:700;letter-spacing:-0.03em;margin-bottom:0.8rem;">¿Y tú qué esperas?</h3>
       <p style="color:var(--muted);font-size:1rem;margin-bottom:2rem;">Tu proyecto puede ser el próximo caso de éxito de FocoLab.</p>
       <a href="#form" class="btn-primary" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'});return false;">Quiero mi proyecto →</a>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS → gris -->
-<section id="testimonials" style="background:var(--bg);">
-  <div class="container">
-    <div class="reveal"><div class="section-tag">Testimonios</div><h2 class="section-title">Lo que dicen<br/>nuestros clientes</h2></div>
-    <div class="test-grid reveal">
-      <div class="test-card"><div class="stars">★★★★★</div><p class="test-text">"FocoLab entregó nuestro sitio en tiempo récord. El resultado superó todas las expectativas. Ahora generamos el doble de contactos por web."</p><div class="test-author"><div class="avatar">CR</div><div><div class="author-name">Carlos Rojas</div><div class="author-role">CEO, Constructora Sur</div></div></div></div>
-      <div class="test-card"><div class="stars">★★★★★</div><p class="test-text">"El equipo entiende de verdad qué necesita un negocio. No solo construyeron la web, sino que también optimizaron toda nuestra presencia digital."</p><div class="test-author"><div class="avatar">MP</div><div><div class="author-name">María Pérez</div><div class="author-role">Directora, Clínica Bienestar</div></div></div></div>
-      <div class="test-card"><div class="stars">★★★★★</div><p class="test-text">"Llevamos 2 años con el servicio de mantención. Cero problemas, siempre disponibles. Nos dan la tranquilidad de enfocarnos en el negocio."</p><div class="test-author"><div class="avatar">AL</div><div><div class="author-name">Andrés López</div><div class="author-role">Fundador, TechRetail</div></div></div></div>
     </div>
   </div>
 </section>
@@ -729,7 +674,7 @@ footer{background:var(--bg);padding:3rem;border-top:1px solid var(--border);disp
   <div class="footer-logo">Foco<span>Lab</span></div>
   <div class="footer-links">
     <a href="#services">Servicios</a><a href="#process">Proceso</a><a href="#team-tree">Equipo</a>
-    <a href="#pricing">Planes</a><a href="#faq">FAQ</a><a href="#form">Contacto</a>
+    <a href="#pricing">Planes</a><a href="#portfolio">Portafolio</a><a href="#faq">FAQ</a><a href="#form">Contacto</a>
   </div>
   <div class="footer-copy">🇨🇱 Equipo chileno · © 2026 FocoLab. Todos los derechos reservados.</div>
 </footer>
@@ -872,8 +817,7 @@ async function submitForm(){
     const r=await fetch('/api/contact',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name,email,company,phone,
-        need:formData.need,budget:formData.budget,time:formData.time})
+      body:JSON.stringify({name,email,company,phone,need:formData.need,budget:formData.budget,time:formData.time})
     });
     if(r.ok){
       document.querySelector('.form-steps').style.display='none';
